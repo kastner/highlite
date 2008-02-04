@@ -55,7 +55,7 @@ $image2 = imagecreate($new_width, $new_height);
 imagecopyresized($image2, $image, 0, 0, 0, 0, $new_width, $new_height, $image_width, $image_height);
 
 // pad the text if needed
-$text = preg_replace("/\n|\t+/", "", $text);
+$text = preg_replace("/\n|\t+/", " ", $text);
 $new_text = $text;
 $total_chars = $new_width * $new_height;
 if ($total_chars > strlen($text)) {
