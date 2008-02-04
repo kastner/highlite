@@ -50,17 +50,6 @@
 </head>
 <body id="color">
   <h1>Hide an image in html</h1>
-  <script type="text/javascript"><!--
-  google_ad_client = "pub-5369189596696267";
-  /* highlite - 2/2/8 */
-  google_ad_slot = "0346720180";
-  google_ad_width = 728;
-  google_ad_height = 15;
-  //-->
-  </script>
-  <script type="text/javascript"
-  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-  </script>
   <h2>Highlight the text with your mouse.</h2>
   
   <div id="beg">
