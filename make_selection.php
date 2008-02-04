@@ -82,7 +82,7 @@
   <form id="form">
     <div>    
       <label for="text">Text:</label>
-      <textarea id="text" name="text"><?php echo $_REQUEST["text"] ?></textarea>
+      <textarea id="text" name="text"><?php echo stripslashes($_REQUEST["text"]) ?></textarea>
     </div>  
     <div>    
       <label for="image">Image URL:</label>
