@@ -119,15 +119,10 @@ foreach($colors as $color => $rgb) {
     // $style .= ".color-$color { color: rgb($rgb[red], $rgb[green], $rgb[blue])}\n";
     $style .= <<<CSS
     
-      .color-$color::selection {
+      .color-$color::selection, .color-$color::-moz-selection {
         color: rgb($rgb[red], $rgb[green], $rgb[blue]);
         background: rgb($rgb[red], $rgb[green], $rgb[blue])
-      }
-      .color-$color::-moz-selection {
-        color: rgb($rgb[red], $rgb[green], $rgb[blue]);
-        background: rgb($rgb[red], $rgb[green], $rgb[blue])
-      }
-      
+      }  
 CSS;
   }
 }
