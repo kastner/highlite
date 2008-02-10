@@ -106,7 +106,7 @@ for ($y = 0; $y < $new_height; $y++) {
     }
     
     // add the current character
-    $output .= htmlentities($chars[$x]);
+    $output .= htmlspecialchars($chars[$x]);
   }
   
   if ($last_color != -1) { $output .= "</span>"; }
