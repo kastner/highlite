@@ -80,7 +80,7 @@ for ($y = 0; $y < $new_height; $y++) {
   $line = rtrim($lines[$y]);
   
   // get the characters in the line into an array
-  $chars = preg_split("/(.)/", $line, -1, PREG_SPLIT_DELIM_CAPTURE);
+  $chars = preg_split("//u", $line, -1, PREG_SPLIT_DELIM_CAPTURE);
   $real_chars = array();
   foreach($chars as $char) { if ($char != "") { $real_chars[] = $char; } }
   $chars = $real_chars;
