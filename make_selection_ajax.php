@@ -65,7 +65,7 @@ if ($total_chars > strlen($text)) {
 }
 
 // get the text into an array
-$lines = preg_split("/(.{" . $width . "})/", $new_text, -1, PREG_SPLIT_DELIM_CAPTURE);
+$lines = preg_split("/(.{" . $width . "})/u", $new_text, -1, PREG_SPLIT_DELIM_CAPTURE);
 foreach($lines as $line) {
   if ($line != "") { $real_lines[] = $line; }
 }
