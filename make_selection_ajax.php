@@ -131,6 +131,7 @@ foreach($colors as $color => $rgb) {
 CSS;
   }
 }
+header("Content-Type: text/html; charset=utf-8");
 ?>
 <pre id="sel">
 <?php echo $output ?>
