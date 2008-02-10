@@ -1,4 +1,6 @@
 <?php
+require 'utf8_strlen.php';
+
 // grab text from the user
 $text = stripslashes($_REQUEST["text"]);
 
@@ -58,8 +60,9 @@ imagecopyresized($image2, $image, 0, 0, 0, 0, $new_width, $new_height, $image_wi
 $text = preg_replace("/\n|\t+/", " ", $text);
 $new_text = $text;
 $total_chars = $new_width * $new_height;
-if ($total_chars > strlen($text)) {
-  for ($i=0; $i<=round($total_chars / strlen($text)); $i++) {
+
+if ($total_chars > utf8_strlen($text)) {
+  for ($i=0; $i<=round(($total_chars - utf8_strlen($text)) / utf8_strlen($text)); $i++) {
     $new_text .= $text;
   }  
 }
