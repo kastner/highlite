@@ -141,6 +141,7 @@
   		$('head').append('<style id="injectedCss" type="text/css">.bob{border:0}</style>');
   		if ($("#h-colors").val() != "") { $("#colors").val($("#h-colors").val()); }
   		if ($("#h-colors").val() != "") { $("#colors").val($("#h-colors").val()); }
+  		if ($("#h-width").val() != "") { $("#width").val($("#h-width").val()); }
   		if ($("#h-reverse").val() == "true") { $("#reverse").attr("checked", true); }
   		if ($("#image").val() != "") {
   		  go();
