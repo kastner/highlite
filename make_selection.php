@@ -103,7 +103,7 @@
     </div>
     <div>
       <label for="reverse">Reverse it <span>(see the image, highlight for text)</span>:</label>
-      <input type="hidden" name="h-reverse" value="<?php echo $_REQUEST[reverse] ?>" />
+      <input type="hidden" id="h-reverse" value="<?php echo $_REQUEST[reverse] ?>" />
       <input type="checkbox" id="reverse" value="true" name="reverse" />
     </div>
     <input type="submit" value="generate"/>
