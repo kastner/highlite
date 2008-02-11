@@ -101,6 +101,10 @@
         <option>220</option>
       </select>
     </div>
+    <div>
+      <label for="reverse">Reverse it <span>(see the image, highlight for text)</span>:</label>
+      <input type="checkbox" id="reverse" value="true" name="reverse" />
+    </div>
     <input type="submit" value="generate"/>
   </form>
   <div id="output-code" style="display:none;">
@@ -120,7 +124,8 @@
         text: $("#text").val(),
         image: $("#image").val(),
         colors: $("#colors").val(),
-        width: $("#width").val()
+        width: $("#width").val(),
+        reverse: $("#reverse").val()
       }, function(responseText) {
         $("#output-code").show();
         $("#code").val(responseText);
@@ -134,7 +139,8 @@
     $(document).ready(function() {
   		$('head').append('<style id="injectedCss" type="text/css">.bob{border:0}</style>');
   		if ($("#h-colors").val() != "") { $("#colors").val($("#h-colors").val()); }
-  		if ($("#h-width").val() != "") { $("#width").val($("#h-width").val()); }
+  		if ($("#h-colors").val() != "") { $("#colors").val($("#h-colors").val()); }
+  		if ($("#h-reverse").val() != "") { $("#reverse").checked = true; }
   		if ($("#image").val() != "") {
   		  go();
   		}

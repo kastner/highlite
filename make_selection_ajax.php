@@ -17,6 +17,10 @@ $width = $_REQUEST["width"];
 $width = intval($width);
 if ($width > 2000 or $width < 40) { $width = 120; }
 
+// reverse output
+$reverse = $_REQUEST["reverse"];
+if ($reverse != "true") { $reverse = "false"; }
+
 // grab image from user
 $image = $_REQUEST["image"];
 
@@ -120,8 +124,26 @@ for ($y = 0; $y < $new_height; $y++) {
 foreach($colors as $color => $rgb) {
   if ($rgb["alpha"] == 0) {
     // $style .= ".color-$color { color: rgb($rgb[red], $rgb[green], $rgb[blue])}\n";
-    $style .= <<<CSS
-    
+    if ($reverse) {
+      $style .= <<<CSS
+      
+      .color-$color {
+        color: rgb($rgb[red], $rgb[green], $rgb[blue]);
+        background: rgb($rgb[red], $rgb[green], $rgb[blue])        
+      }
+      .color-$color::selection {
+        color: black;
+        background: transparent;
+      }
+      .color-$color::-moz-selection {
+        color: black;
+        background: transparent;
+      }
+CSS;      
+    }
+    else {
+      $style .= <<<CSS
+
       .color-$color::selection {
         color: rgb($rgb[red], $rgb[green], $rgb[blue]);
         background: rgb($rgb[red], $rgb[green], $rgb[blue])
@@ -130,8 +152,9 @@ foreach($colors as $color => $rgb) {
         color: rgb($rgb[red], $rgb[green], $rgb[blue]);
         background: rgb($rgb[red], $rgb[green], $rgb[blue])
       }
-      
 CSS;
+      
+    }
   }
 }
 header("Content-Type: text/html; charset=utf-8");
