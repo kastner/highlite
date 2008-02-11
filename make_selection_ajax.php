@@ -46,6 +46,9 @@ switch($type[1]) {
     $image = imagecreatefrompng($image);
 }
 
+// dither the image down to suggested # of colors
+imagetruecolortopalette($image, true, $num_colors);
+
 // calculate the width (1:2 the original)
 $new_width = $width;
 $new_height = ceil(($new_width / $image_width) * $image_height / 2);
@@ -55,9 +58,6 @@ $image2 = imagecreate($new_width, $new_height);
 
 // squish (or stretch) the image into the new image object
 imagecopyresized($image2, $image, 0, 0, 0, 0, $new_width, $new_height, $image_width, $image_height);
-
-// dither the image down to suggested # of colors
-imagetruecolortopalette($image2, true, $num_colors);
 
 // pad the text if needed
 $text = preg_replace("/\n|\t+/", " ", $text);
