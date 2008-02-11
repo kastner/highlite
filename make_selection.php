@@ -24,6 +24,8 @@
     }
     #form input[type="submit"], #form input[type="text"] {
       width: 300px;
+    }
+    #form input {
       margin-left: 20px;
       margin-bottom: 10px;
     }
@@ -77,6 +79,7 @@
     <div>    
       <label for="image">Image URL:</label>
       <input type="text" id="image" name="image" value="<?php echo $_REQUEST["image"] ?>">
+      <?php if ($_REQUEST["image"]) { echo "<a href='$_REQUEST[image]' target='_new'>view image</a>"; } ?>
     </div>
     <div>
       <label for="colors">Number of colors:</label>
