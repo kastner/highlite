@@ -134,11 +134,11 @@ foreach($colors as $color => $rgb) {
       }
       .color-$color::selection {
         color: black;
-        background: inherit;
+        background: white;
       }
       .color-$color::-moz-selection {
         color: black;
-        background: inherit;
+        background: white;
       }
 CSS;
 
