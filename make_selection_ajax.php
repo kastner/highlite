@@ -19,7 +19,7 @@ if ($width > 2000 or $width < 40) { $width = 120; }
 
 // reverse output
 echo "rev: $_REQUEST[reverse]<br/>";
-$reverse = ($_REQUEST["reverse"] == "true");
+$reverse = ($_REQUEST["reverse"] == "true") ? true : false;
 echo "rev: $reverse<br/>";
 
 // grab image from user
