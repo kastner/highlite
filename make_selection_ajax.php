@@ -18,8 +18,10 @@ $width = intval($width);
 if ($width > 2000 or $width < 40) { $width = 120; }
 
 // reverse output
+echo "rev: $_REQUEST[reverse]<br/>";
 $reverse = $_REQUEST["reverse"];
 if ($reverse != "true") { $reverse = "false"; }
+echo "rev: $reverse<br/>";
 
 // grab image from user
 $image = $_REQUEST["image"];
@@ -133,11 +135,11 @@ foreach($colors as $color => $rgb) {
       }
       .color-$color::selection {
         color: black;
-        background: transparent;
+        background: inherit;
       }
       .color-$color::-moz-selection {
         color: black;
-        background: transparent;
+        background: inherit;
       }
 CSS;
 
