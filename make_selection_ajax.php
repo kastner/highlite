@@ -19,8 +19,7 @@ if ($width > 2000 or $width < 40) { $width = 120; }
 
 // reverse output
 echo "rev: $_REQUEST[reverse]<br/>";
-$reverse = $_REQUEST["reverse"];
-if ($reverse != "true") { $reverse = "false"; }
+$reverse = ($_REQUEST["reverse"] == "true");
 echo "rev: $reverse<br/>";
 
 // grab image from user
@@ -126,7 +125,7 @@ for ($y = 0; $y < $new_height; $y++) {
 foreach($colors as $color => $rgb) {
   if ($rgb["alpha"] == 0) {
     // $style .= ".color-$color { color: rgb($rgb[red], $rgb[green], $rgb[blue])}\n";
-    if ($reverse) {
+    if ($reverse == true) {
       $style .= <<<CSS
       
       .color-$color {
