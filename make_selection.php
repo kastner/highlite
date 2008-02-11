@@ -125,7 +125,7 @@
         image: $("#image").val(),
         colors: $("#colors").val(),
         width: $("#width").val(),
-        reverse: $("#reverse").val()
+        reverse: $("#reverse").checked
       }, function(responseText) {
         $("#output-code").show();
         $("#code").val(responseText);
