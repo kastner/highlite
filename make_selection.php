@@ -22,7 +22,7 @@
     #form label {
       display: block;
     }
-    #form input {
+    #form input[type="submit"], #form input[type="text"] {
       width: 300px;
       margin-left: 20px;
       margin-bottom: 10px;
