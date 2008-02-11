@@ -139,7 +139,8 @@ foreach($colors as $color => $rgb) {
         color: black;
         background: transparent;
       }
-CSS;      
+CSS;
+
     }
     else {
       $style .= <<<CSS
