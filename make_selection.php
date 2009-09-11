@@ -67,6 +67,7 @@
       </form>
     </p>
     <p>Created by <a href="mailto:kastner@gmail.com">Erik Kastner</a> at 2am</p>
+    <p>Want the code? Grab it on <a href="http://github.com/kastner/highlite/">GitHub</a></p>
   </div>
   
   <h3>How it works:</h3>
